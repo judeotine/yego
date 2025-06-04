@@ -16,7 +16,7 @@ YEGO® is a full-featured eCommerce frontend built with React, TypeScript and mo
 - **Type Safety**: Full TypeScript implementation
 - **Ready for Backend**: Structured for easy Supabase integration
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Frontend Framework**: React 18 with TypeScript
 - **Build Tool**: Vite
