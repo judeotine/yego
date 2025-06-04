@@ -1,1 +1,34 @@
+# Dependencies
 node_modules
+.pnp
+.pnp.js
+
+# Production
+build
+dist
+.next
+out
+
+# Build files
+*.tsbuildinfo
+.next
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment variables
+.env*.local
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Vite
+vite.config.ts.timestamp-*.mjs
