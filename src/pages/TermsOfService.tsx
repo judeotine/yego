@@ -4,22 +4,38 @@ import Layout from '@/components/layout/Layout';
 
 const TermsOfService = () => {
   const sections = [
-    'Acceptance of Terms',
-    'Use of the Website',
-    'Products and Services',
-    'Ordering and Payment',
-    'Shipping and Delivery',
-    'Returns and Refunds',
-    'User Accounts',
-    'Intellectual Property',
-    'Prohibited Uses',
-    'Disclaimers',
-    'Limitation of Liability',
-    'Indemnification',
-    'Termination',
-    'Governing Law',
-    'Changes to Terms',
-    'Contact Information',
+    {
+      title: 'Acceptance of Terms',
+      content: 'By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.'
+    },
+    {
+      title: 'Use of the Website',
+      content: 'You may use our website for lawful purposes only. You agree not to use the site in any way that violates any applicable laws or regulations.'
+    },
+    {
+      title: 'Products and Services',
+      content: 'All products and services are subject to availability. We reserve the right to discontinue any product at any time.'
+    },
+    {
+      title: 'Ordering and Payment',
+      content: 'All orders are subject to acceptance and availability. Payment must be received before products are shipped.'
+    },
+    {
+      title: 'Shipping and Delivery',
+      content: 'We will make every effort to deliver products within the estimated timeframes, but delivery times are not guaranteed.'
+    },
+    {
+      title: 'Returns and Refunds',
+      content: 'Returns are accepted within 30 days of purchase in original condition. Refunds will be processed within 5-7 business days.'
+    },
+    {
+      title: 'Intellectual Property',
+      content: 'All content on this website, including text, graphics, logos, and images, is the property of YEGO and protected by copyright laws.'
+    },
+    {
+      title: 'Limitation of Liability',
+      content: 'YEGO shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products or services.'
+    },
   ];
 
   return (
@@ -51,7 +67,7 @@ const TermsOfService = () => {
             className="text-center mb-12"
           >
             <p className="font-inter text-gray-600">
-              Last updated: <span className="w-24 h-4 bg-gray-200 rounded inline-block animate-pulse align-middle"></span>
+              Last updated: January 1, 2025
             </p>
           </motion.div>
 
@@ -64,12 +80,10 @@ const TermsOfService = () => {
           >
             <div className="bg-yego-gray rounded-lg p-8">
               <h2 className="font-poppins font-bold text-2xl mb-4">Agreement to Terms</h2>
-              <div className="space-y-4">
-                <div className="w-full h-4 bg-gray-300 rounded animate-pulse"></div>
-                <div className="w-4/5 h-4 bg-gray-300 rounded animate-pulse"></div>
-                <div className="w-5/6 h-4 bg-gray-300 rounded animate-pulse"></div>
-                <div className="w-3/4 h-4 bg-gray-300 rounded animate-pulse"></div>
-              </div>
+              <p className="font-inter text-gray-700 leading-relaxed">
+                These Terms of Service govern your use of the YEGO website and services. 
+                By accessing or using our services, you agree to comply with and be bound by these terms.
+              </p>
             </div>
           </motion.div>
 
@@ -77,43 +91,19 @@ const TermsOfService = () => {
           <div className="space-y-8">
             {sections.map((section, index) => (
               <motion.div
-                key={section}
+                key={section.title}
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 className="bg-white rounded-lg border border-gray-200 p-8"
               >
-                <h3 className="font-poppins font-bold text-xl mb-6">
-                  {index + 1}. {section}
+                <h3 className="font-poppins font-bold text-xl mb-4">
+                  {index + 1}. {section.title}
                 </h3>
-                <div className="space-y-4">
-                  <div className="w-full h-3 bg-gray-200 rounded animate-pulse"></div>
-                  <div className="w-5/6 h-3 bg-gray-200 rounded animate-pulse"></div>
-                  <div className="w-4/5 h-3 bg-gray-200 rounded animate-pulse"></div>
-                </div>
-                
-                {/* Sub-sections placeholder */}
-                <div className="mt-6 space-y-4">
-                  <div className="ml-4">
-                    <h4 className="font-poppins font-semibold text-sm mb-2 text-gray-700">
-                      {index + 1}.1 Subsection
-                    </h4>
-                    <div className="space-y-2">
-                      <div className="w-4/5 h-3 bg-gray-200 rounded animate-pulse"></div>
-                      <div className="w-3/4 h-3 bg-gray-200 rounded animate-pulse"></div>
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-poppins font-semibold text-sm mb-2 text-gray-700">
-                      {index + 1}.2 Subsection
-                    </h4>
-                    <div className="space-y-2">
-                      <div className="w-5/6 h-3 bg-gray-200 rounded animate-pulse"></div>
-                      <div className="w-2/3 h-3 bg-gray-200 rounded animate-pulse"></div>
-                    </div>
-                  </div>
-                </div>
+                <p className="font-inter text-gray-700 leading-relaxed">
+                  {section.content}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -132,9 +122,9 @@ const TermsOfService = () => {
               If you have any questions about these Terms of Service, please contact us at:
             </p>
             <div className="space-y-2 text-gray-300">
-              <div className="w-48 h-4 bg-gray-700 rounded animate-pulse"></div>
-              <div className="w-40 h-4 bg-gray-700 rounded animate-pulse"></div>
-              <div className="w-52 h-4 bg-gray-700 rounded animate-pulse"></div>
+              <p>Email: yego@gmail.com</p>
+              <p>Phone: +256 758990562</p>
+              <p>Address: Kampala, Uganda</p>
             </div>
           </motion.div>
         </div>
