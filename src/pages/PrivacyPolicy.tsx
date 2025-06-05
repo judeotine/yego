@@ -4,17 +4,30 @@ import Layout from '@/components/layout/Layout';
 
 const PrivacyPolicy = () => {
   const sections = [
-    'Information We Collect',
-    'How We Use Your Information',
-    'Information Sharing and Disclosure',
-    'Data Security',
-    'Your Rights and Choices',
-    'Cookies and Tracking Technologies',
-    'Third-Party Services',
-    'International Data Transfers',
-    'Children\'s Privacy',
-    'Changes to This Privacy Policy',
-    'Contact Us',
+    {
+      title: 'Information We Collect',
+      content: 'We collect information you provide directly to us, such as when you create an account, make a purchase, or contact us for support. This may include your name, email address, phone number, shipping address, and payment information.'
+    },
+    {
+      title: 'How We Use Your Information',
+      content: 'We use the information we collect to provide, maintain, and improve our services, process transactions, send you updates about your orders, and communicate with you about our products and services.'
+    },
+    {
+      title: 'Information Sharing and Disclosure',
+      content: 'We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy or as required by law.'
+    },
+    {
+      title: 'Data Security',
+      content: 'We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.'
+    },
+    {
+      title: 'Your Rights and Choices',
+      content: 'You have the right to access, update, or delete your personal information. You may also opt out of certain communications from us. Contact us to exercise these rights.'
+    },
+    {
+      title: 'Cookies and Tracking Technologies',
+      content: 'We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content. You can control cookie settings through your browser.'
+    },
   ];
 
   return (
@@ -46,7 +59,7 @@ const PrivacyPolicy = () => {
             className="text-center mb-12"
           >
             <p className="font-inter text-gray-600">
-              Last updated: <span className="w-24 h-4 bg-gray-200 rounded inline-block animate-pulse align-middle"></span>
+              Last updated: January 1, 2025
             </p>
           </motion.div>
 
@@ -59,11 +72,11 @@ const PrivacyPolicy = () => {
           >
             <div className="bg-yego-gray rounded-lg p-8">
               <h2 className="font-poppins font-bold text-2xl mb-4">Introduction</h2>
-              <div className="space-y-4">
-                <div className="w-full h-4 bg-gray-300 rounded animate-pulse"></div>
-                <div className="w-3/4 h-4 bg-gray-300 rounded animate-pulse"></div>
-                <div className="w-5/6 h-4 bg-gray-300 rounded animate-pulse"></div>
-              </div>
+              <p className="font-inter text-gray-700 leading-relaxed">
+                At YEGO, we respect your privacy and are committed to protecting your personal information. 
+                This Privacy Policy explains how we collect, use, and safeguard your information when you 
+                visit our website or use our services.
+              </p>
             </div>
           </motion.div>
 
@@ -71,36 +84,17 @@ const PrivacyPolicy = () => {
           <div className="space-y-8">
             {sections.map((section, index) => (
               <motion.div
-                key={section}
+                key={section.title}
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 className="bg-white rounded-lg border border-gray-200 p-8"
               >
-                <h3 className="font-poppins font-bold text-xl mb-6">{section}</h3>
-                <div className="space-y-4">
-                  <div className="w-full h-3 bg-gray-200 rounded animate-pulse"></div>
-                  <div className="w-4/5 h-3 bg-gray-200 rounded animate-pulse"></div>
-                  <div className="w-5/6 h-3 bg-gray-200 rounded animate-pulse"></div>
-                  <div className="w-3/4 h-3 bg-gray-200 rounded animate-pulse"></div>
-                </div>
-                
-                {/* Sub-points placeholder */}
-                <div className="mt-6 ml-6 space-y-3">
-                  <div className="flex">
-                    <div className="w-2 h-2 bg-yego-red rounded-full mt-1.5 mr-3 flex-shrink-0"></div>
-                    <div className="w-3/4 h-3 bg-gray-200 rounded animate-pulse"></div>
-                  </div>
-                  <div className="flex">
-                    <div className="w-2 h-2 bg-yego-red rounded-full mt-1.5 mr-3 flex-shrink-0"></div>
-                    <div className="w-2/3 h-3 bg-gray-200 rounded animate-pulse"></div>
-                  </div>
-                  <div className="flex">
-                    <div className="w-2 h-2 bg-yego-red rounded-full mt-1.5 mr-3 flex-shrink-0"></div>
-                    <div className="w-4/5 h-3 bg-gray-200 rounded animate-pulse"></div>
-                  </div>
-                </div>
+                <h3 className="font-poppins font-bold text-xl mb-4">{section.title}</h3>
+                <p className="font-inter text-gray-700 leading-relaxed">
+                  {section.content}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -119,9 +113,9 @@ const PrivacyPolicy = () => {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <div className="space-y-2 text-gray-300">
-              <div className="w-48 h-4 bg-gray-700 rounded animate-pulse"></div>
-              <div className="w-40 h-4 bg-gray-700 rounded animate-pulse"></div>
-              <div className="w-52 h-4 bg-gray-700 rounded animate-pulse"></div>
+              <p>Email: yego@gmail.com</p>
+              <p>Phone: +256 758990562</p>
+              <p>Address: Kampala, Uganda</p>
             </div>
           </motion.div>
         </div>
