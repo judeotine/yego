@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -19,8 +20,11 @@ const Shop = () => {
     if (category) {
       const categoryMap: { [key: string]: string } = {
         'new': 'New Arrivals',
-        'clothing': 'Clothing',
-        'accessories': 'Accessories',
+        'clothing': 'All Clothing',
+        'tshirts': 'T-Shirts',
+        'hoodies': 'Hoodies',
+        'pants': 'Pants',
+        'jackets': 'Jackets',
         'sale': 'Sale',
       };
       setSelectedCategory(categoryMap[category] || 'All');
@@ -28,9 +32,10 @@ const Shop = () => {
   }, [category]);
 
   const filters = {
-    categories: ['All', 'New Arrivals', 'Clothing', 'Accessories', 'Footwear', 'Sale'],
+    categories: ['All', 'New Arrivals', 'T-Shirts', 'Hoodies', 'Pants', 'Jackets', 'Sale'],
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-    colors: ['Black', 'White', 'Red', 'Gray', 'Navy'],
+    materials: ['Cotton', 'Cotton Blend', 'Polyester', 'Fleece', 'Denim'],
+    colors: ['Black', 'White', 'Red', 'Gray', 'Navy', 'Olive'],
     priceRanges: ['Under UGX 100,000', 'UGX 100,000 - 200,000', 'UGX 200,000 - 500,000', 'Over UGX 500,000'],
   };
 
@@ -42,8 +47,11 @@ const Shop = () => {
     if (category) {
       const titles: { [key: string]: string } = {
         'new': 'NEW ARRIVALS',
-        'clothing': 'CLOTHING',
-        'accessories': 'ACCESSORIES',
+        'clothing': 'ALL CLOTHING',
+        'tshirts': 'T-SHIRTS',
+        'hoodies': 'HOODIES',
+        'pants': 'PANTS',
+        'jackets': 'JACKETS',
         'sale': 'SALE',
       };
       return titles[category] || 'SHOP YEGO';
@@ -65,7 +73,7 @@ const Shop = () => {
               <h1 className="font-poppins font-black text-4xl md:text-6xl mb-4">
                 {getPageTitle().split(' ').map((word, index) => (
                   <span key={index}>
-                    {word === 'YEGO' || word === 'ARRIVALS' || word === 'CLOTHING' || word === 'ACCESSORIES' || word === 'SALE' ? (
+                    {word === 'YEGO' || word === 'ARRIVALS' || word === 'CLOTHING' || word === 'T-SHIRTS' || word === 'HOODIES' || word === 'PANTS' || word === 'JACKETS' || word === 'SALE' ? (
                       <span className="text-yego-red">{word}</span>
                     ) : (
                       word
@@ -75,7 +83,7 @@ const Shop = () => {
                 ))}
               </h1>
               <p className="font-inter text-xl text-gray-300">
-                {category ? `Discover our ${category} collection` : 'Premium Ugandan streetwear collection'}
+                {category ? `Discover our ${category} collection` : 'Premium Ugandan streetwear clothing'}
               </p>
             </motion.div>
           </div>
@@ -98,7 +106,7 @@ const Shop = () => {
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
                     <input
                       type="text"
-                      placeholder="Search products..."
+                      placeholder="Search clothing..."
                       className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yego-red"
                     />
                   </div>
@@ -133,6 +141,19 @@ const Shop = () => {
                       >
                         {size}
                       </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Material Filter */}
+                <div className="mb-6">
+                  <h4 className="font-poppins font-semibold mb-3">Material</h4>
+                  <div className="space-y-2">
+                    {filters.materials.map((material) => (
+                      <label key={material} className="flex items-center">
+                        <input type="checkbox" className="mr-2" />
+                        <span className="font-inter text-sm">{material}</span>
+                      </label>
                     ))}
                   </div>
                 </div>
@@ -179,7 +200,7 @@ const Shop = () => {
                     Filters
                   </Button>
                   <span className="font-inter text-gray-600">
-                    {products.length === 0 ? 'Ready to load products' : `Showing ${products.length} products`}
+                    {products.length === 0 ? 'Ready to load clothing' : `Showing ${products.length} items`}
                   </span>
                 </div>
 
@@ -225,8 +246,8 @@ const Shop = () => {
                 </motion.div>
               ) : (
                 <div className="text-center py-16">
-                  <h3 className="font-poppins font-semibold text-xl mb-4">Ready for Products</h3>
-                  <p className="text-gray-600 mb-8">Connect to Supabase to start loading your YEGO collection</p>
+                  <h3 className="font-poppins font-semibold text-xl mb-4">Ready for Clothing</h3>
+                  <p className="text-gray-600 mb-8">Connect to Supabase to start loading your YEGO clothing collection</p>
                 </div>
               )}
 
@@ -238,7 +259,7 @@ const Shop = () => {
                     size="lg"
                     className="border-yego-red text-yego-red hover:bg-yego-red hover:text-white"
                   >
-                    Load More Products
+                    Load More Clothing
                   </Button>
                 </div>
               )}
