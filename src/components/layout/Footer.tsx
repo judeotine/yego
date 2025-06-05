@@ -6,12 +6,14 @@ import { Instagram, Twitter, Facebook, Mail } from 'lucide-react';
 const Footer = () => {
   const footerSections = [
     {
-      title: 'Shop',
+      title: 'Shop Clothing',
       links: [
-        { name: 'New Arrivals', href: '/shop?category=new' },
-        { name: 'Clothing', href: '/shop?category=clothing' },
-        { name: 'Accessories', href: '/shop?category=accessories' },
-        { name: 'Sale', href: '/shop?category=sale' },
+        { name: 'New Arrivals', href: '/shop/new' },
+        { name: 'T-Shirts', href: '/shop/tshirts' },
+        { name: 'Hoodies', href: '/shop/hoodies' },
+        { name: 'Pants', href: '/shop/pants' },
+        { name: 'Jackets', href: '/shop/jackets' },
+        { name: 'Sale', href: '/shop/sale' },
       ],
     },
     {
@@ -19,15 +21,12 @@ const Footer = () => {
       links: [
         { name: 'Contact Us', href: '/contact' },
         { name: 'Size Guide', href: '/size-guide' },
-        { name: 'Shipping Info', href: '/shipping' },
-        { name: 'Returns', href: '/returns' },
       ],
     },
     {
       title: 'Company',
       links: [
         { name: 'About YEGO', href: '/about' },
-        { name: 'Careers', href: '/careers' },
         { name: 'Privacy Policy', href: '/privacy' },
         { name: 'Terms of Service', href: '/terms' },
       ],
@@ -58,7 +57,7 @@ const Footer = () => {
                 <span className="text-yego-red">Y</span>EGO
               </h2>
               <p className="text-gray-300 font-inter leading-relaxed mb-6">
-                Bold, luxurious urban streetwear for the confident. Elevate your style with premium fashion that makes a statement.
+                Bold, luxurious urban streetwear clothing for the confident. Elevate your style with premium fashion that makes a statement.
               </p>
             </motion.div>
 
@@ -117,7 +116,7 @@ const Footer = () => {
               Stay Updated
             </h3>
             <p className="text-gray-300 font-inter mb-4">
-              Get the latest drops and exclusive offers delivered to your inbox.
+              Get the latest clothing drops and exclusive offers delivered to your inbox.
             </p>
             <div className="flex gap-2">
               <input
