@@ -98,9 +98,9 @@ const About = () => {
                 viewport={{ once: true }}
                 className="aspect-square bg-gray-200 rounded-lg"
               >
-                {/* Placeholder for brand image */}
-                <div className="w-full h-full flex items-center justify-center text-gray-500">
-                  <span className="font-poppins font-bold text-4xl">YEGO</span>
+                {/* Brand logo */}
+                <div className="w-full h-full flex items-center justify-center">
+                  <img src="/logo.png" alt="YEGO Logo" className="h-16 w-auto" />
                 </div>
               </motion.div>
             </div>
