@@ -29,7 +29,7 @@ const Admin = () => {
         >
           <div className="mb-8">
             <h1 className="font-poppins font-bold text-3xl mb-2">YEGO® Admin Dashboard</h1>
-            <p className="text-gray-600">Manage your luxury streetwear store</p>
+            <p className="text-gray-600">Manage your luxury streetwear clothing store</p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
@@ -60,10 +60,10 @@ const Admin = () => {
               {activeTab === 'products' && (
                 <div className="space-y-6">
                   <div className="flex justify-between items-center">
-                    <h2 className="font-poppins font-bold text-2xl">Product Management</h2>
+                    <h2 className="font-poppins font-bold text-2xl">Clothing Management</h2>
                     <Button className="bg-yego-red hover:bg-red-700 shadow-lg">
                       <Plus size={16} className="mr-2" />
-                      Add New Product
+                      Add New Clothing Item
                     </Button>
                   </div>
 
@@ -73,7 +73,7 @@ const Admin = () => {
                     animate={{ opacity: 1, y: 0 }}
                     className="bg-white rounded-lg border border-gray-200 p-8 shadow-sm"
                   >
-                    <h3 className="font-poppins font-semibold text-xl mb-6">Create New Product</h3>
+                    <h3 className="font-poppins font-semibold text-xl mb-6">Create New Clothing Item</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <Label htmlFor="productName" className="font-poppins font-medium">Product Name</Label>
@@ -98,20 +98,20 @@ const Admin = () => {
                           id="description"
                           rows={4}
                           className="mt-2 focus:ring-2 focus:ring-yego-red"
-                          placeholder="Premium streetwear crafted for the bold and confident..."
+                          placeholder="Premium streetwear clothing crafted for the bold and confident..."
                         />
                       </div>
                       <div>
-                        <Label htmlFor="category" className="font-poppins font-medium">Category</Label>
+                        <Label htmlFor="category" className="font-poppins font-medium">Clothing Category</Label>
                         <select
                           id="category"
                           className="w-full mt-2 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yego-red"
                         >
-                          <option>Select category</option>
-                          <option>Hoodies & Sweatshirts</option>
+                          <option>Select clothing category</option>
                           <option>T-Shirts</option>
-                          <option>Accessories</option>
-                          <option>Footwear</option>
+                          <option>Hoodies & Sweatshirts</option>
+                          <option>Pants</option>
+                          <option>Jackets</option>
                         </select>
                       </div>
                       <div>
@@ -123,18 +123,43 @@ const Admin = () => {
                           className="mt-2 focus:ring-2 focus:ring-yego-red"
                         />
                       </div>
+                      <div>
+                        <Label htmlFor="material" className="font-poppins font-medium">Material</Label>
+                        <select
+                          id="material"
+                          className="w-full mt-2 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yego-red"
+                        >
+                          <option>Select material</option>
+                          <option>Cotton</option>
+                          <option>Cotton Blend</option>
+                          <option>Polyester</option>
+                          <option>Fleece</option>
+                          <option>Denim</option>
+                        </select>
+                      </div>
+                      <div>
+                        <Label htmlFor="sizes" className="font-poppins font-medium">Available Sizes</Label>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {['XS', 'S', 'M', 'L', 'XL', 'XXL'].map((size) => (
+                            <label key={size} className="flex items-center">
+                              <input type="checkbox" className="mr-1" />
+                              <span className="text-sm">{size}</span>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
                       <div className="md:col-span-2">
                         <Label className="font-poppins font-medium">Product Images</Label>
                         <div className="mt-2 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-yego-red transition-colors">
                           <Upload className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-                          <p className="text-gray-600">Drop images here or click to upload</p>
+                          <p className="text-gray-600">Drop clothing images here or click to upload</p>
                           <p className="text-sm text-gray-500 mt-2">PNG, JPG up to 10MB</p>
                         </div>
                       </div>
                     </div>
                     <div className="flex gap-4 mt-8">
                       <Button className="bg-yego-red hover:bg-red-700 flex-1">
-                        Create Product
+                        Create Clothing Item
                       </Button>
                       <Button variant="outline" className="flex-1">
                         Save as Draft
@@ -149,14 +174,14 @@ const Admin = () => {
                     transition={{ delay: 0.1 }}
                     className="bg-white rounded-lg border border-gray-200 p-6 shadow-sm"
                   >
-                    <h3 className="font-poppins font-semibold text-xl mb-6">Product Inventory</h3>
+                    <h3 className="font-poppins font-semibold text-xl mb-6">Clothing Inventory</h3>
                     <div className="text-center py-12">
                       <Package className="mx-auto h-16 w-16 text-gray-400 mb-4" />
-                      <h4 className="font-poppins font-medium text-lg mb-2">No Products Yet</h4>
-                      <p className="text-gray-600 mb-6">Start by adding your first YEGO product to the inventory</p>
+                      <h4 className="font-poppins font-medium text-lg mb-2">No Clothing Items Yet</h4>
+                      <p className="text-gray-600 mb-6">Start by adding your first YEGO clothing item to the inventory</p>
                       <Button className="bg-yego-red hover:bg-red-700">
                         <Plus size={16} className="mr-2" />
-                        Add First Product
+                        Add First Clothing Item
                       </Button>
                     </div>
                   </motion.div>
