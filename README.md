@@ -131,6 +131,39 @@ src/
 - **Dashboard**: User account management
 - **Admin**: Administrative interface
 
+
+### Preview
+
+<div align="center">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0;">
+    <div style="text-align: center;">
+      <img src="./public/mockups/Homepage.png" alt="Homepage" style="max-width: 100%; border: 1px solid #eee; border-radius: 8px;" />
+      <p><strong>Homepage</strong></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="./public/mockups/login.png" alt="Login" style="max-width: 100%; border: 1px solid #eee; border-radius: 8px;" />
+      <p><strong>Login</strong></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="./public/mockups/signup.png" alt="Sign Up" style="max-width: 100%; border: 1px solid #eee; border-radius: 8px;" />
+      <p><strong>Sign Up</strong></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="./public/mockups/contact.png" alt="Contact" style="max-width: 100%; border: 1px solid #eee; border-radius: 8px;" />
+      <p><strong>Contact</strong></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="./public/mockups/about.png" alt="About" style="max-width: 100%; border: 1px solid #eee; border-radius: 8px;" />
+      <p><strong>About</strong></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="./public/mockups/cart.png" alt="Cart" style="max-width: 100%; border: 1px solid #eee; border-radius: 8px;" />
+      <p><strong>Cart</strong></p>
+    </div>
+  </div>
+</div>
+
+
 ##  Currency
 
 All pricing is displayed in **UGX (Ugandan Shillings)** with proper formatting:
